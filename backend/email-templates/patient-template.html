@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #f72585;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7ff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .email-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .email-header .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .email-body {
+            padding: 25px;
+        }
+        
+        .greeting {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .confirmation-card {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .test-badge {
+            display: inline-block;
+            background: #e0e7ff;
+            color: var(--secondary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .contact-card {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .contact-icon {
+            margin-right: 12px;
+            color: var(--primary);
+            font-size: 18px;
+            min-width: 24px;
+            text-align: center;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .action-button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+        }
+        
+        .action-button.secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        .action-button.secondary:hover {
+            background: #f5f7ff;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 12px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .prescription-note {
+            background: #fff8e6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <div class="icon">✅</div>
+            <h1>Appointment Confirmed</h1>
+        </div>
+        
+        <div class="email-body">
+            <div class="greeting">
+                <p>Dear {{patientName}},</p>
+                <p>Thank you for choosing our diagnostic center! We've received your appointment request.</p>
+            </div>
+            
+            <div class="confirmation-card">
+                <h2 style="margin-top: 0; color: var(--primary);">Appointment Summary</h2>
+                
+                {{testsContent}}
+                
+                <p style="margin-top: 15px; font-size: 14px; color: #6c757d;">
+                    Booking reference: {{bookingRef}}
+                </p>
+            </div>
+            
+            <div class="contact-card">
+                <h3 style="margin-top: 0; color: var(--secondary);">Our Contact Information</h3>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span><strong>Phone:</strong> +91 82912 15999</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">🏢</span>
+                    <span>
+                        <strong>Address:</strong><br>
+                        Flat No. 304, Devangi Apartment<br>
+                        Behind Vishnu Vihar, Kargil Nagar<br>
+                        Manvel Pada Road, Virar East<br>
+                        Palghar, Maharashtra - 401303
+                    </span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">🕒</span>
+                    <span><strong>Business Hours:</strong> Monday-Saturday, 8:00 AM - 8:00 PM</span>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="tel:+918291215999" class="action-button">
+                    Call Us Now
+                </a>
+                <a href="https://maps.google.com?q=Flat+No.+304,+Devangi+Apartment+Behind+Vishnu+Vihar,+Kargil+Nagar+Manvel+Pada+Road,+Virar+East+Palghar,+Maharashtra+-+401303" 
+                  class="action-button secondary" target="_blank">
+                    Get Directions
+                </a>
+            </div>
+            
+            <p style="text-align: center; margin-top: 25px; color: #6c757d;">
+                We'll contact you within 24 hours to confirm your appointment timing.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated message. Please do not reply to this email.</p>
+            <p>© 2024 Diagnostic Center. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>v
