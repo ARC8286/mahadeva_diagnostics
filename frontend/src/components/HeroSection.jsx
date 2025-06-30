@@ -20,7 +20,7 @@ import {
 import { IoMdPulse } from 'react-icons/io';
 import { BiTestTube } from 'react-icons/bi';
 import veterianimg from '../assets/veterian.jpg'
-import homex_rayimg from '../assets/homex-ray.png'
+import homex_rayimg from '../assets/homex-ray.png';
 const HeroSection = () => {
   const phoneNumber = "+918291215999";
   const whatsappMessage = "Hello, I'd like to book a portable X-ray service";
