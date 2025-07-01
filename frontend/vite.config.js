@@ -7,8 +7,5 @@ export default defineConfig({
     react()
 
   ],
-   server: {
-    host: '0.0.0.0',   // ye zaroori hai
-    port: 5174         // optional: port fix rakh sakte ho
-  }
+   
 })

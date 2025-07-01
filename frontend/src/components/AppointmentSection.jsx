@@ -191,7 +191,7 @@ const AppointmentSection = () => {
         formDataToSend.append('prescription', prescriptionFile);
       }
 
-      const response = await fetch('http://localhost:3001/api/book-appointment', {
+      const response = await fetch('https://mahadeva-diagnostics.onrender.com/api/book-appointment', {
         method: 'POST',
         body: formDataToSend,
       });
