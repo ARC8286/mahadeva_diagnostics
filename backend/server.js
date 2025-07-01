@@ -13,11 +13,7 @@ const port = process.env.PORT || 3002;
 
 // CORS Configuration
 app.use(cors({
-  origin: [
-    'https://mahadeva-diagnostics.vercel.app',
-    
-    'https://mahadeva-diagnostics.onrender.com'
-  ],
+  origin: 'https://mahadeva-diagnostics.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
