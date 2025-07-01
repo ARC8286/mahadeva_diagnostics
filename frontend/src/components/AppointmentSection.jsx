@@ -193,7 +193,7 @@ const AppointmentSection = () => {
 
       const response = await fetch('https://mahadeva-diagnostics.onrender.com/api/book-appointment', {
         method: 'POST',
-        body: formDataToSend,
+        body: formDataToSend
       });
 
       if (!response.ok) {
