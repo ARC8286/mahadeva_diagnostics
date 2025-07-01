@@ -16,7 +16,7 @@ app.use(cors({
   origin: [
     'https://mahadeva-diagnostics.vercel.app',
     'http://localhost:5173',
-    'http://localhost:5174' 
+    'https://mahadeva-diagnostics.onrender.com'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
