@@ -19,7 +19,7 @@ import {
 } from 'react-icons/fa';
 import { MdEmail, MdMedicalServices } from 'react-icons/md';
 
-
+import mahadevlogo from '../assets/mahadev.jpeg';
 const Footer = () => {
   // Updated contact info with clickable links
   const contactInfo = {
@@ -73,7 +73,7 @@ const Footer = () => {
           <div className="mb-8">
             <div className="flex items-center mb-4 md:mb-5">
               <img 
-                src="src/assets/mahadev.jpeg"
+                src={mahadevlogo}
                 alt="Mahadeva X-Ray & Diagnostics Logo"
                 className="w-12 h-12 rounded-full mr-3 object-cover border-2 border-blue-400"
                 loading="lazy"
