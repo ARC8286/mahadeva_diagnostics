@@ -13,19 +13,12 @@ const port = process.env.PORT || 3002;
 
 // CORS Configuration
 // Backend (server.js)
-const corsOptions = {
-  origin: [
-    'https://mahadeva-diagnostics.vercel.app',
-    "https://mahadeva-diagnostics-arc8286s-projects.vercel.app",
-    'https://mahadeva-diagnostics-qwycipxfb-arc8286s-projects.vercel.app',
-    "https://mahadeva-diagnostics-git-main-arc8286s-projects.vercel.app",
-    "https://mahadeva-diagnostics-okvrghlf5-arc8286s-projects.vercel.app"
-  ],
-  methods: ['POST'], // सिर्फ POST (अगर GET की जरूरत नहीं)
-  allowedHeaders: ['Content-Type'] // और कुछ नहीं
-};
-
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'https://mahadeva-diagnostics.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
