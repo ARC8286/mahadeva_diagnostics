@@ -15,8 +15,7 @@ const port = process.env.PORT || 3002;
 // Backend (server.js)
 app.use(cors({
   origin: 'https://mahadeva-diagnostics.vercel.app',
-  methods: ['POST'],
-  allowedHeaders: ['Content-Type']
+  methods: ['POST']
 }));
 
 
