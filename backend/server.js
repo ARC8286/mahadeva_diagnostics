@@ -14,8 +14,8 @@ const port = process.env.PORT || 3002;
 // CORS Configuration
 // Backend (server.js)
 app.use(cors({
-  origin: 'https://mahadeva-diagnostics.vercel.app',
-  methods: ['POST']
+  origin: 'https://mahadeva-diagnostics-git-main-arc8286s-projects.vercel.app',
+  methods: ['POST'],
 }));
 
 
